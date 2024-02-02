@@ -58,12 +58,45 @@ footer {
 /* Responsive Design */
 @media only screen and (max-width: 600px) {
     nav a {
-        display: block;
+        display: flex;
+      
         text-align: center;
         margin: 0.5em 0;
     }
     nav {
-        padding-bottom: 60%;
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; 
+
+    }
+}
+
+/*BURGER MENU*/
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    order: -1;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-icon {
+        font-size: 50px;
+        cursor: pointer;
+        color: white;
     }
 }
 
