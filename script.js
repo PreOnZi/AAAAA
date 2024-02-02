@@ -8,3 +8,8 @@ function checkPassword() {
         alert("Incorrect password. Please try again.");
     }
 }
+
+function toggleMenu() {
+    var nav = document.querySelector('nav');
+    nav.classList.toggle('show');
+}
