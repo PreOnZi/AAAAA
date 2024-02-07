@@ -1,102 +1,107 @@
-/* style.css */
+/* this short styling setup is the best approach - disables all margin and padding that we don't want + box-sizing is easier way how to set perfectly the size of your elements without having issues with padding, margin and border settings. Always good to use this before any other code, so it can be changed for specific elements where you want to have your own settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #cef8f0;
-    background-image: url('background.jpeg');
+  font-family: "Arial", sans-serif;
+  background-color: #cef8f0;
+  background-image: url("background.jpeg");
 }
 
 header {
-    background-color: #00080e;
-    opacity: 90%;
-    color: white;
-    padding: 1em;
-    text-align: center;
+  background-color: #00080e;
+  opacity: 90%;
+  color: white;
+  padding: 1em;
+  text-align: center;
 }
 
 nav {
-    background-color: #010614;
-    padding: 0.5em;
-    justify-content: center;
-    display: flex;
+  background-color: #010614;
+  padding: 0.5em;
+  justify-content: center;
+  display: flex;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5em 1em;
-    margin: 0 0.5em;
-    border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  margin: 0 0.5em;
+  border-radius: 4px;
 }
 
 section {
-    padding: 1em;
-  
-    background-color: #00021eb7;
-    font-size: larger;
+  padding: 1em;
+  background-color: #00021eb7;
+  font-size: larger;
+  /* this one is not perfect - when not set, Carding page has not the dark layer over the whole background image. When set, it very much depends on the device you use... */
+  min-height: 50vh;
 }
 section ul {
-    color: whitesmoke;
+  color: whitesmoke;
 }
+
+/* after every li element, that is the last child of its parent, will be margin bottom */
+li:last-child {
+  margin-bottom: 1.5rem;
+}
+
 h2 {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 footer {
-    background-color: #00080e;
-    color: rgb(255, 255, 255);
-    padding: 1em;
-    text-align: center;
+  background-color: #00080e;
+  color: rgb(255, 255, 255);
+  padding: 1em;
+  text-align: center;
 }
-.footing{
-    background-color: #00021eb7;
-    height: 300px;
+.footing {
+  background-color: #00021eb7;
+  height: 300px;
 }
 
 /* Responsive Design */
 @media only screen and (max-width: 600px) {
-    nav a {
-        display: flex;
-      
-        text-align: center;
-        margin: 0.5em 0;
-    }
-    nav {
-        text-align: center;
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; 
-
-    }
+  nav a {
+    display: flex;
+    margin: 0.5em 0;
+  }
+  nav {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
 }
 
 /*BURGER MENU*/
 .burger-menu {
-    display: none;
-    cursor: pointer;
-    order: -1;
+  display: none;
+  cursor: pointer;
+  order: -1;
 }
 
 @media screen and (max-width: 768px) {
-    nav {
-        display: none;
-        flex-direction: column;
-    }
+  nav {
+    display: none;
+    flex-direction: column;
+  }
 
-    nav.show {
-        display: flex;
-    }
+  nav.show {
+    display: flex;
+  }
 
-    .burger-menu {
-        display: block;
-    }
+  .burger-menu {
+    display: block;
+  }
 
-    .burger-icon {
-        font-size: 50px;
-        cursor: pointer;
-        color: white;
-    }
+  .burger-icon {
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+  }
 }
-
